@@ -19,7 +19,7 @@ li
 	grid-template-columns: 2fr 10fr 2fr;
 	grid-template-rows:2;
 	min-height:25px;
-	background: url(../img/stars.jpg);
+	background: url(./img/stars.jpg);
 	overflow: auto;
 }
 #logo
@@ -90,7 +90,7 @@ li
 	height:100%;
 	font-size:20px;
 	border:none;
-	background: #282727 url(../img/magnefy2.png) right no-repeat;
+	background: #282727 url(./img/magnefy2.png) right no-repeat;
 
 }
 
