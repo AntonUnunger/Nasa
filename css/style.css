@@ -57,16 +57,21 @@ li
 .first, .horizontal
 {
 	padding:1% 1% 1% 1%;
-	font-size:21px;
+	font-size:1.1vw;
 }
-.horizontal, .lower-item
+.horizontal
 { 
 	border-left: 1px solid; 
 }
 
+.lower-item
+{
+	border-left: 1px solid;
+}
 .lower-first, .lower-item
 {
 	padding:0.5% 0.8%;
+	font-size:0.82vw;
 	margin:auto;
 
 }
