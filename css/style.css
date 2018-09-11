@@ -100,19 +100,25 @@ li
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 15px;
+	grid-auto-flow: dense;
 }
-
-.Card img
+#Main-Content img
 {
 	width: 100%;
 	height: 100%;
 }
 .Card
 {
-	overflow: hidden;
+	display:flex;
 }
 
 .Card2
 {
-
+	grid-column: span 2;
+	display:flex;
+}
+.Card4
+{
+	grid-column: span 4;
+	display:flex;
 }
