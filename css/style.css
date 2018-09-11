@@ -94,7 +94,25 @@ li
 
 }
 
-/*test*/
+#Main-Content
+{
+	margin-top: 15px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 15px;
+}
 
+.Card img
+{
+	width: 100%;
+	height: 100%;
+}
+.Card
+{
+	overflow: hidden;
+}
 
+.Card2
+{
 
+}
