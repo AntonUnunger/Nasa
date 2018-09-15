@@ -12,7 +12,6 @@ li
 {
 	width: 70%;
 	margin: auto;
-
 }
 #header
 {	
@@ -24,8 +23,7 @@ li
 	background: url(../img/stars.jpg);
 	position:fixed;
 	top:0;
-	
-
+	z-index: 1;
 }
 #logo
 {
@@ -78,7 +76,6 @@ li
 	padding:0.5% 0.8%;
 	font-size:0.82vw;
 	margin:auto;
-
 }
 #search
 {
@@ -108,9 +105,7 @@ li
 	background-color: #282727;
 	color:lightgray;
 	position:absolute;
-
 }
-
 #Main-Content
 {
 	margin-top: 125px;
@@ -129,8 +124,51 @@ li
 {
 	display:flex;
 }
-
-.Card2
+#Card-text
+{
+	background-color: #1a70c2;
+	position:relative;
+}
+#text-card
+{
+	padding:0 10px 0 10px; 	
+}
+#title-text p
+{
+	font-size: 1.2vw;
+	color:white;
+	margin:0;
+}
+#title-text:after
+{
+	content:"";
+	display:block;
+	height:1px;
+	background: white;
+}
+#content-text
+{
+	flex:1 1 auto;
+}
+#content-text p
+{
+	margin:0;
+	color: white;
+}
+#content-text:after
+{
+	content:"";
+	display:block;
+	height:1px;
+	background: white;
+}
+#footer-text
+{
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+.Card2, #Card2-text
 {
 	grid-column: span 2;
 	display:flex;
@@ -139,4 +177,67 @@ li
 {
 	grid-column: span 4;
 	display:flex;
+	position:relative;
+}
+#right-side
+{
+	background-color: white;
+	position: relative;
+}
+#right-side:before
+{
+	content:"";
+	border-style:solid;
+	border-width: 33px 40px 33px 0;
+	border-color: transparent #fff;
+	position: absolute;
+	left:-40px;
+	top:40%;
+}
+#Card2-text section
+{
+	padding-left:10px;
+}
+#Card2-text h1
+{
+	display:inline;
+	Color:#1a70c2;
+	margin:auto;
+	font-size:1.8vw;
+}
+#Card2-text img
+{
+	width:50%;
+}
+#Card-list
+{
+	list-style: none;
+	margin:0;
+	padding:0;
+	text-align: left;
+
+}
+#Card-list li
+{
+	color:#1a70c2;
+}
+#text
+{
+	top:60%;
+	left:4%;
+	position:absolute;
+}
+#top-text
+{
+	display:inline;
+	margin:0;
+	padding: 5px;
+	background-color:rgb(0, 153, 204, 0.7);
+	color:white;
+}
+#bottom-text
+{
+	padding:5px;
+	margin-top:5px;
+	background-color:rgba(255, 255, 255, 0.7);	
 }
