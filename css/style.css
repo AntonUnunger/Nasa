@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
 body
 {
 	background:black;
@@ -11,33 +13,34 @@ li
 {
 	width: 70%;
 	margin: auto;
-	overflow: auto;
 }
+/*----------------------------------------------HEADER------------------------------------------------------*/
 #header
 {	
 	display: grid;
 	grid-template-columns: 2fr 10fr 2fr;
 	grid-template-rows:2;
 	min-height:25px;
+	width:inherit;
 	background: url(../img/stars.jpg);
-	overflow: auto;
+	position:fixed;
+	top:0;
+	z-index: 1;
 }
 #logo
 {
 	float:left;
-	height:80%;
 	width:65%;
 	grid-row: 1 / span 2;
-	margin:auto;
-	
+	margin:10px auto 10px auto;	
 }
 #top-menu, #lower-menu
 {
 	display: flex;
 	margin:0;
 	list-style:none;
+	font-weight: 500;
 }
-
 #top-menu
 {
 	padding: 0;
@@ -53,7 +56,6 @@ li
 	justify-content: center;
 	align-items: center;
 }
-
 .first, .horizontal
 {
 	padding:1% 1% 1% 1%;
@@ -63,7 +65,6 @@ li
 { 
 	border-left: 1px solid; 
 }
-
 .lower-item
 {
 	border-left: 1px solid;
@@ -73,57 +74,194 @@ li
 	padding:0.5% 0.8%;
 	font-size:0.82vw;
 	margin:auto;
-
 }
 #search
 {
-	width:100%;
+	position:relative;
+	width:90%;
 	height:40px;
 	margin: auto;
 }
-
-#search input[type=image]
+#search input[type=text]
 {
-	width:10%;
-	height:100%;
-	border:none;
-		
-}
-#header input[type=text]
-{
-	width:100%;
+	width:90%;
 	height:100%;
 	font-size:20px;
+	padding: 0 20px 0 5px;
 	border:none;
-	background: #282727 url(../img/magnefy2.png) right no-repeat;
-
+	background: #282727 /*url(../img/magnefy2.png) right no-repeat;*/
 }
-
+#mybutton
+{
+	top:0;
+	font-size:1vw;
+	margin-top:1px;
+	right:0;
+	height:90%;
+	border:none;
+	padding:0;
+	background-color: #282727;
+	color:lightgray;
+	position:absolute;
+}
+/*----------------------------------------------CONTENT------------------------------------------------------*/
 #Main-Content
 {
-	margin-top: 15px;
+	margin-top: 125px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
+	
 	grid-gap: 15px;
 	grid-auto-flow: dense;
 }
 #Main-Content img
 {
 	width: 100%;
-	height: 100%;
+	height: 315px;
 }
+/*----------------------------------------------1 Wide cards------------------------------------------------------*/
 .Card
 {
 	display:flex;
 }
-
-.Card2
+#Card-text
+{
+	background-color: #1a70c2;
+	position:relative;
+	height:315px;
+}
+#text-card
+{
+	color:white;
+	padding:0 10px 0 10px; 	
+	height:315px;
+}
+#title-text p
+{
+	font-size: 1.2vw;	
+	margin:0;
+}
+#title-text:after
+{
+	content:"";
+	display:block;
+	height:1px;
+	background: white;
+}
+#relative-box
+{
+	height:315px;
+	position:relative;
+}
+#content-text p
+{
+	margin:0;
+}
+#footer-text:before
+{
+	content:"";
+	display:block;
+	height:1px;
+	background: white;
+}
+#footer-text
+{
+	padding:inherit;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	text-align: center;
+	font-size: 0.75vw;
+}
+#leftT
+{
+	width:40%;
+	margin:0;
+	float:left;	
+}
+#rightT
+{
+	width:60%;
+	margin:0;
+	float:left;
+}
+#footer-text p
+{
+	margin:auto;
+}
+/*----------------------------------------------2 Wide cards------------------------------------------------------*/
+.Card2, #Card2-text
 {
 	grid-column: span 2;
 	display:flex;
 }
+#right-side
+{
+	background-color: white;
+	position: relative;
+}
+#right-side:before
+{
+	content:"";
+	border-style:solid;
+	border-width: 33px 40px 33px 0;
+	border-color: transparent #fff;
+	position: absolute;
+	left:-40px;
+	top:40%;
+}
+#Card2-text section
+{
+	padding-left:10px;
+}
+#Card2-text h1
+{
+	display:inline;
+	Color:#1a70c2;
+	margin:auto;
+	font-size:1.8vw;
+}
+#Card2-text img
+{
+	width:50%;
+}
+#Card-list
+{
+	list-style: none;
+	margin:0;
+	padding:0;
+	text-align: left;
+
+}
+#Card-list li
+{
+	color:#1a70c2;
+}
+#text
+{
+	top:60%;
+	left:4%;
+	position:absolute;
+}
+#top-text
+{
+	display:inline;
+	margin:0;
+	padding: 5px;
+	background-color:rgb(0, 153, 204, 0.7);
+	color:white;
+}
+#bottom-text
+{
+	padding:5px;
+	margin-top:5px;
+	background-color:rgba(255, 255, 255, 0.7);	
+}
+/*----------------------------------------------4 Wide cards------------------------------------------------------*/
 .Card4
 {
 	grid-column: span 4;
 	display:flex;
+	position:relative;
 }
+
