@@ -89,7 +89,8 @@ li
 	font-size:20px;
 	padding: 0 20px 0 5px;
 	border:none;
-	background: #282727 /*url(../img/magnefy2.png) right no-repeat;*/
+	background: #282727;
+	color:white;
 }
 #mybutton
 {
