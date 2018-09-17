@@ -287,13 +287,13 @@ li
 {
 	color:#1a70c2;
 }
-#text
+.text
 {
 	top:60%;
 	left:4%;
 	position:absolute;
 }
-#top-text
+.top-text
 {
 	display:inline;
 	margin:0;
@@ -301,7 +301,7 @@ li
 	background-color:rgb(0, 153, 204, 0.7);
 	color:white;
 }
-#bottom-text
+.bottom-text
 {
 	padding:5px;
 	margin-top:5px;
