@@ -161,19 +161,13 @@ li
 	background-color: white;
 	height: 100%;
 	width:100%;
+	position:absolute;
 }
 
 #news-info1 p, #news-info1 h1
 {
 	margin:5%;
 }
-
-/*#News-Card1:hover #news-info1
-{
-	display:block;
-	position:absolute;
-}*/
-
 #Card-text
 {
 	background-color: #1a70c2;
