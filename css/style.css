@@ -168,11 +168,11 @@ li
 	margin:5%;
 }
 
-#News-Card1:hover #news-info1
+/*#News-Card1:hover #news-info1
 {
 	display:block;
 	position:absolute;
-}
+}*/
 
 #Card-text
 {

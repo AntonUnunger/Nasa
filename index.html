@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<script type="text/javascript" src="./js/slider.js"></script>
+		<script type="text/javascript" src="./js/hover.js"></script>
 	</head>
 
 	<body>
@@ -90,9 +91,9 @@
 					<img src="./img/Spaceman.jpg">
 						<div id="newsbox1">
 							<h3 id="news-top">Runaway Spaceman</h2>
-							<h2 id="news-bottom">Astrounaut on untethered spacewalk</h1>
+							<h2 onmouseover="MyHover()" id="news-bottom">Astrounaut on untethered spacewalk</h1>
 						</div>
-					<div id="news-info1">
+					<div onmouseout="MyLeave()" id="news-info1">
 						<h1>Runaway Spaceman</h1>
 						<p>Captain James Smith went on the first untethered spacewalk today when he tested a jetpack. He floated unassisted near the Internation Space Station for 10 minutes and then returned.</p>
 					</div>
