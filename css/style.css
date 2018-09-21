@@ -134,10 +134,12 @@ li
 }
 
 #newsbox1
+
 {
 	position: absolute;
 	bottom:0;
 }
+
 #news-top
 {
 	display:inline;
@@ -168,6 +170,7 @@ li
 {
 	margin:5%;
 }
+	
 #Card-text
 {
 	background-color: #1a70c2;
