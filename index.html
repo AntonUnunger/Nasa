@@ -2,10 +2,12 @@
 
 <html lang="en">
 	<head>
-	  <meta charset="utf-8">
-	  <title>NASA</title>
-	  <link rel="stylesheet" href="css/style.css">
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<meta charset="utf-8">
+		<title>NASA</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<script type="text/javascript" src="./js/slider.js"></script>
+		<script type="text/javascript" src="./js/hover.js"></script>
 	</head>
 
 	<body>
@@ -40,11 +42,29 @@
 			</div>
 			<div id="Main-Content">
 				<div class="Card4">
-					<img src="./img/earth.jpg">
-					<div id="text">
-						<h2 id="top-text">Satellite</h2>
-						<h1 id="bottom-text">New cool satellite launched into orbit</h1>
-					</div>
+						<div class="SlideShow">
+							<div class="text">
+								<h2 class="top-text">See inside</h2>
+								<h1 class="bottom-text">The inside of the Soyuz rocket</h1>
+							</div>
+							<img src="./img/soyuz.jpg">
+						</div>
+					
+						<div class="SlideShow">
+							<div class="text">
+								<h2 class="top-text">Mars Horizon</h2>
+								<h1 class="bottom-text">Curiosity rovers latest picture from mars</h1>
+							</div>
+							<img src="./img/mars.jpg">
+						</div>
+					
+						<div class="SlideShow">
+							<div class="text">
+								<h2 class="top-text">Satellite</h2>
+								<h1 class="bottom-text">New cool satellite launched into orbit</h1>
+							</div>
+							<img src="./img/earth.jpg">
+						</div>
 				</div>
 				<div id="Card-text">
 					<div id="text-card">
@@ -67,13 +87,20 @@
 						</div>
 					</div>
 				</div>
-				<div class="Card">
+				<div id="News-Card1">
 					<img src="./img/Spaceman.jpg">
-					<div id="newsbox">
+
+					<div id="newsbox1">
 						<h3 id="news-top">Runaway Spaceman</h2>
-						<h2 id="news-bottom">Astrounaut on untethered spacewalk</h1>
+						<h2 onmouseenter="MyHover()" id="news-bottom">Astrounaut on untethered spacewalk</h1>
+					</div>
+					<div onmouseleave="MyLeave()" id="news-info1">
+						<h1>Runaway Spaceman</h1>
+						<p>Captain James Smith went on the first untethered spacewalk today when he tested a jetpack. He floated unassisted near the Internation Space Station for 10 minutes and then returned.</p>
+
 					</div>
 				</div>
+				
 				<div id="Card2-text">
 					<img src="./img/Rocket.jpg">
 					<div id="right-side">
@@ -86,15 +113,20 @@
 								<li>Launch coolk</li>
 								<li>Launch swag</li>	
 							</ul>
-						</section>	
+						</section>
 					</div>
+				</div>
+				<div class="Card">
+					<video id="WaterTest" autoplay controls>
+						<source src="./img/WaterTest.mp4" type="video/mp4">
+					</video>
 				</div>	
 				<div class="Card2">
 					<img src="./img/crew.jpg">
 				</div>
-				<div class="Card2">
+				<!--<div class="Card2">
 					<img src="./img/TestFire.jpg">
-				</div>
+				</div>-->
 				<div class="Card">
 					<img src="./img/Canadarm.jpg">
 				</div>		
