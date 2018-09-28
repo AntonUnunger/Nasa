@@ -2,7 +2,7 @@
 
 body
 {
-	background:black;
+	background:white;
 	font-family: "Titillium Web", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
 li
@@ -305,7 +305,7 @@ li
 	background-color:rgba(255, 255, 255, 0.7);	
 }
 /*----------------------------------------------4 Wide cards------------------------------------------------------*/
-.Card4
+#Slider4
 {
 	grid-column: span 4;
 	display:flex;
