@@ -12,33 +12,51 @@
 		die("Connection failed: " . $conn->connect_error);
 	} 
 
+	$errors = array();
+	if (isset($_POST['submit'])) {
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
+		$content = mysqli_real_escape_string($conn, $_POST['content']);
+		$categories = $_POST['categories'];
 
-	if(isset($_POST['Submit']))
-	{
-		$title = $_POST['Title'];
-		$content = $_POST['Content'];
+        if(empty($title)){
+			array_push($errors, "Title must not be empty!" );
+        }    
+        if(empty($content)){
+			array_push($errors, "Content must not be empty!" );
+        }
+        if (!empty($_FILES['file']['error'])) {
+			array_push($errors, "Please choose an image!");
 
-		if(isset($_FILES['file']))
-		{
-			$dir = './img/';
+		} 
+		else {
+			echo 'else';
+			$dir = './img/posts/';
 			$file_name = $_FILES['file']['name'];
-			$filepath = $dir.$file_name;
-
-
-
-
-
-
-			$queryString = "INSERT INTO article(Title,Content,Filepath) VALUES ('".$title."','".$content."','".$filepath."')";
-			if(mysqli_query($conn, $queryString))
-			{
-				echo "Event was successfully added";
+			$file_size =$_FILES['file']['size'];
+			$file_tmp =$_FILES['file']['tmp_name'];
+			$file_type=$_FILES['file']['type'];
+			$file_ext = explode('.', $file_name);
+			$real_file_ext = strtolower(end($file_ext));
+			
+			$extensions= array("jpeg","jpg","png");
+			
+			$name = uniqid().'.'.$real_file_ext;
+			
+			if(!in_array($real_file_ext, $extensions)){
+				array_push($errors, "File type not supported!" );
 			}
-			else
-			{
-				echo "Event failed to be added...";
-			}				
-		}	
+			
+			if($file_size > 5242880){
+				array_push($errors, "File is too large! (Max 5mb)!" );
+			}
+			if (empty($errors)) {
+				$filepath = $dir.$name;
+				move_uploaded_file($file_tmp, $filepath);
+				
+				$sql = "INSERT INTO article (Title, Content, Filepath, Category) VALUES ('$title', '$content', '$filepath', '$categories')";
+				$result = mysqli_query($conn, $sql);
+			}
+		}
 	}
 ?>
 
@@ -57,14 +75,36 @@
 			<div id="header">
 				<img id="logo" src="./img/nasa-logo.png">
 			</div>
-			<div id="Main-Content">
-                <form id="Form4" method="post">
-					<input type="text" placeholder="Title" name="Title">
-					<input type="text" placeholder="Content" name="Content">
-					<input id="file" name="file" type="file">
-					<input type="submit" value="Submit" name="Submit">    
-				</form>
-                
+			<div id="Content">
+				<div id="CreateSlider">
+					<form id="Form4" method="post" enctype="multipart/form-data">
+						<div id="categorydiv">
+							<h3>Select a category</h3>
+							<p>This will be the top text</p>
+							<select id="Select-Box" name="categories">
+								<option value="Satellite">Satellite</option>
+								<option value="See Inside">See Inside</option>
+								<option value="Mars">Mars</option>
+								<option value="Rockets">Rockets</option>  
+							</select>
+						</div>
+						
+						<div id="titlediv">
+							<h3>Choose a title</h3>
+							<p>This will be the bottom text</p>
+							<input id="Title-Input" type="text" placeholder="Title" name="title">
+						</div>
+
+							<div id="contentdiv">
+								<h3>Write the content</h3>
+								<p>This will be displayed on the page for the article</p>
+							<input id="Content-Input" type="text" placeholder="Content" name="content">
+							
+						</div>
+						<input id="file" name="file" type="file">
+						<input type="submit" value="submit" name="submit">    
+					</form>
+				</div>
             </div>
 		</div>		
 	</body>

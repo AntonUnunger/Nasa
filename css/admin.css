@@ -1,16 +1,43 @@
-#input
+#Content
 {
-	position:relative;
-	width:90%;
-	height:40px;
-	margin: auto;
+	margin:125px auto auto auto;
+	width:100%;
+	background-color:blue;
+	border-radius:5px;
+	padding:10px;
 }
-#search input[type=text]
+#CreateSlider
 {
-	width:90%;
-	height:100%;
-	font-size:20px;
-	padding: 0 20px 0 5px;
-	border:none;
-	background: #282727 /*url(../img/magnefy2.png) right no-repeat;*/
+	
+	margin:auto;
+
+}
+#Form4
+{
+	width:60%;
+	margin:auto;
+}
+#Select-Box, #Title-Input, #Content-Input
+{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#Select-Box
+{
+	width:100%;
+}
+
+#Content-Input
+{
+	width:100%;
+	min-height: 200px;
+}
+#Title-Input
+{
+	width:100%;
 }

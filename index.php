@@ -1,3 +1,20 @@
+<?php 
+	$hostname = "localhost";
+	$username = "root";
+	$password = "";
+	$error = "Cannot connect to database, please try again later...";
+	$dbname = "nasa";
+
+	// Create connection
+	$conn = new mysqli($hostname, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+    } 
+    
+?>
+
+
 <!doctype html>
 
 <html lang="en">
@@ -26,7 +43,6 @@
 				<form id="search">
 					<input type="text" placeholder="Search">
 					<button id="mybutton"><i class="fa fa-search"></i></button>
-					
 				</form>
 				<ul id="lower-menu">
 					<li class="lower-first">Humans in Space</li>
@@ -42,6 +58,28 @@
 			</div>
 			<div id="Main-Content">
 				<div id="Slider4">
+                    <?php
+                        $sqlArticleQuery = "select * from article";
+                        $slides = mysqli_query($conn, $sqlArticleQuery);
+                        while($slide = mysqli_fetch_array($slides, MYSQLI_ASSOC))
+                        {
+                            echo
+                            "
+                                <div class='SlideShow'>
+                                    <div class='text'>
+                                        <h2 class='top-text'>".$slide['Category']."</h2>
+                                        <h1 class='bottom-text'>".$slide['Title']."</h1>
+                                    </div>
+                                    <a href='article.php?id=".$slide['Filepath']."'>
+                                    <img src='".$slide['Filepath']."'>
+                                    </a>
+                                </div>
+                            ";	
+                        }
+                    ?>
+
+
+                <!--
 					<div class="SlideShow">
 						<div class="text">
 							<h2 class="top-text">See inside</h2>
@@ -65,7 +103,7 @@
 						</div>
 						<img src="./img/earth.jpg">
 					</div>
-					
+                    -->
 				</div>
 				<div id="Card-text">
 					<div id="text-card">

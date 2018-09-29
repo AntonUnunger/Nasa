@@ -1,0 +1,10 @@
+.content
+{
+    grid-column: span 4;
+    color:white;
+    text-align:center;
+    background-color:#1a70c2;
+    padding:5px;
+    border-radius:5px;
+    height:100%;
+}
