@@ -1,0 +1,35 @@
+#Content
+{
+	margin:125px auto auto auto;
+	width:45%;
+	background-color:#1a70c2;
+	border-radius:5px;
+	padding:10px;
+}
+#login
+{
+    width:50%;
+    margin:auto;
+}
+
+#User-Input, #Pass-Input
+{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width:100%;
+}
+.button
+{
+    background-color: #ffffff;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:5px;
+}

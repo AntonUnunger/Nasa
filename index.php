@@ -30,7 +30,7 @@
 	<body>
 		<div id="main">
 			<div id="header">
-				<img id="logo" src="./img/nasa-logo.png">
+				<a href="index.php" id="logo" ></a>
 				<ul id="top-menu">
 					<li	class="first">Missions</li>
 					<li class="horizontal">Galleries</li>
@@ -171,6 +171,7 @@
 				</div>		
 			</div>
 			<div id="footer">
+				<a href="login.php">Login page</a>
 				<a href="admin.php">Admin page</a>
 			</div>
 		</div>		

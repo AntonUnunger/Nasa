@@ -1,4 +1,8 @@
-<?php 
+<?php
+	if(!isset($_COOKIE["PHPSESSID"]))
+	{
+		header("Location: google.php");
+	}
 	$hostname = "localhost";
 	$username = "root";
 	$password = "";
@@ -29,7 +33,6 @@
 
 		} 
 		else {
-			echo 'else';
 			$dir = './img/posts/';
 			$file_name = $_FILES['file']['name'];
 			$file_size =$_FILES['file']['size'];
@@ -73,7 +76,7 @@
 	<body>
 		<div id="main">
 			<div id="header">
-				<img id="logo" src="./img/nasa-logo.png">
+				<a href="index.php" id="logo" ></a>
 			</div>
 			<div id="Content">
 				<div id="CreateSlider">
@@ -94,15 +97,13 @@
 							<p>This will be the bottom text</p>
 							<input id="Title-Input" type="text" placeholder="Title" name="title">
 						</div>
-
-							<div id="contentdiv">
-								<h3>Write the content</h3>
-								<p>This will be displayed on the page for the article</p>
-							<input id="Content-Input" type="text" placeholder="Content" name="content">
-							
+						<div id="contentdiv">
+							<h3>Write the content</h3>
+							<p>This will be displayed on the page for the article</p
+							><textarea id="Content-Input" name="content" placeholder="Content"></textarea>
 						</div>
 						<input id="file" name="file" type="file">
-						<input type="submit" value="submit" name="submit">    
+						<input class="button" type="submit" value="submit" name="submit">    
 					</form>
 				</div>
             </div>

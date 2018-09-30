@@ -13,6 +13,7 @@ li
 {
 	width: 70%;
 	margin: auto;
+	position:relative;
 }
 /*----------------------------------------------HEADER------------------------------------------------------*/
 #header
@@ -20,20 +21,24 @@ li
 	display: grid;
 	grid-template-columns: 2fr 10fr 2fr;
 	grid-template-rows:2;
-	min-height:25px;
 	width:inherit;
 	background: url(../img/stars.jpg);
 	position:fixed;
 	top:0;
+	height:115px;
 	z-index: 1;
 }
+
 #logo
 {
+	background:url(../img/nasa-logo.png) no-repeat center;
+	background-size: contain ;
 	float:left;
-	width:65%;
+	width:100%;
 	grid-row: 1 / span 2;
 	margin:10px auto 10px auto;	
 }
+
 #top-menu, #lower-menu
 {
 	display: flex;
