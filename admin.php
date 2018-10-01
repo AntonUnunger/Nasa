@@ -1,7 +1,7 @@
 <?php
 	if(!isset($_COOKIE["PHPSESSID"]))
 	{
-		header("Location: google.php");
+		header("Location: login.php");
 	}
 	$hostname = "localhost";
 	$username = "root";
