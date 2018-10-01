@@ -1,6 +1,10 @@
 <?php 
     session_start();
-    if(isset($_POST['submit']))
+	if(isset($_COOKIE["PHPSESSID"]))
+	{
+		header("Location: admin.php");
+	}
+	if(isset($_POST['submit']))
     {
         $_SESSION['username'] = $_POST['username'];
         header("Location: admin.php");
