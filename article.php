@@ -62,22 +62,33 @@
                     $slides = mysqli_query($conn, $sqlArticleQuery);
                     while($slide = mysqli_fetch_array($slides, MYSQLI_ASSOC))
                     {
-                        echo
-                        "
-                            <div id='Slider4'>
-                                <div class='SlideShow'>
-                                    <div class='text'>
-                                        <h2 class='top-text'>".$slide['Category']."</h2>
-                                        <h1 class='bottom-text'>".$slide['Title']."</h1>
-                                    </div>
-                                    <img src='".$slide['Filepath']."'>
-                                </div>
-                            </div>
-                            <div class='content'>
-                                <p class='article-text'>".$slide['Content']."</p>
-                            </div>
-                        ";	
-                    }
+						$file = '';
+						if($slide['FileExt'] == "mp4"  || $slide['FileExt'] == "mov" || $slide['FileExt'] == "wav")
+						{
+							$file = "<video class='slidervid' autoplay>
+										<source src='".$slide['Filepath']."' type='video/".$slide['FileExt']."'>
+									</video>";
+						}
+						else
+						{
+							$file = "<img src='".$slide['Filepath']."'>";
+						}
+						echo
+						"
+							<div id='Slider4'>
+								<div class='SlideShow'>
+									<div class='text'>
+										<h2 class='top-text'>".$slide['Category']."</h2>
+										<h1 class='bottom-text'>".$slide['Title']."</h1>
+									</div>
+									".$file."
+								</div>
+							</div>
+							<div class='content'>
+								<p class='article-text'>".$slide['Content']."</p>
+							</div>
+						";	
+                    }	
                 ?>
             </div>
         </div>

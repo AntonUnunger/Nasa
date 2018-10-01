@@ -37,14 +37,13 @@
 			$file_name = $_FILES['file']['name'];
 			$file_size =$_FILES['file']['size'];
 			$file_tmp =$_FILES['file']['tmp_name'];
-			$file_type=$_FILES['file']['type'];
 			$file_ext = explode('.', $file_name);
 			$real_file_ext = strtolower(end($file_ext));
 			
-			$extensions= array("jpeg","jpg","png");
+			$extensions= array("jpeg","jpg","png","mp4", "mov", "wav");
 			
 			$name = uniqid().'.'.$real_file_ext;
-			
+
 			if(!in_array($real_file_ext, $extensions)){
 				array_push($errors, "File type not supported!" );
 			}
@@ -56,7 +55,7 @@
 				$filepath = $dir.$name;
 				move_uploaded_file($file_tmp, $filepath);
 				
-				$sql = "INSERT INTO article (Title, Content, Filepath, Category) VALUES ('$title', '$content', '$filepath', '$categories')";
+				$sql = "INSERT INTO article (Title, Content, Filepath, Category, fileExt) VALUES ('$title', '$content', '$filepath', '$categories', '$real_file_ext')";
 				$result = mysqli_query($conn, $sql);
 			}
 		}

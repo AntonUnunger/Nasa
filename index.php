@@ -60,9 +60,22 @@
 				<div id="Slider4">
                     <?php
                         $sqlArticleQuery = "select * from article";
-                        $slides = mysqli_query($conn, $sqlArticleQuery);
+						$slides = mysqli_query($conn, $sqlArticleQuery);
                         while($slide = mysqli_fetch_array($slides, MYSQLI_ASSOC))
                         {
+							$file = '';
+							if($slide['FileExt'] == "mp4"  || $slide['FileExt'] == "mov" || $slide['FileExt'] == "wav")
+							{
+								$file = "<a href='article.php?id=".$slide['Filepath']."'><video class='slidervid' autoplay>
+											<source src='".$slide['Filepath']."' type='video/".$slide['FileExt']."'>
+										</video></a>";
+							}
+							else
+							{
+								$file = "<a href='article.php?id=".$slide['Filepath']."'>
+                                    		<img src='".$slide['Filepath']."'>
+                                    	</a>";
+							}
                             echo
                             "
                                 <div class='SlideShow'>
@@ -70,9 +83,7 @@
                                         <h2 class='top-text'>".$slide['Category']."</h2>
                                         <h1 class='bottom-text'>".$slide['Title']."</h1>
                                     </div>
-                                    <a href='article.php?id=".$slide['Filepath']."'>
-                                    <img src='".$slide['Filepath']."'>
-                                    </a>
+                                    ".$file."
                                 </div>
                             ";	
                         }
