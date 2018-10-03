@@ -55,7 +55,7 @@
 				$filepath = $dir.$name;
 				move_uploaded_file($file_tmp, $filepath);
 				
-				$sql = "INSERT INTO article (Title, Content, Filepath, Category, fileExt) VALUES ('$title', '$content', '$filepath', '$categories', '$real_file_ext')";
+				$sql = "INSERT INTO article (Title, Content, Filepath, Category, FileExt) VALUES ('$title', '$content', '$filepath', '$categories', '$real_file_ext')";
 				$result = mysqli_query($conn, $sql);
 			}
 		}
