@@ -1,13 +1,46 @@
 <?php 
-    session_start();
 	if(isset($_COOKIE["PHPSESSID"]))
 	{
 		header("Location: admin.php");
 	}
+	
+	$hostname = "localhost";
+	$username = "root";
+	$password = "";
+	$error = "Cannot connect to database, please try again later...";
+	$dbname = "nasa";
+
+	// Create connection
+	$conn = new mysqli($hostname, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) 
+	{
+		die("Connection failed: " . $conn->connect_error);
+	} 
+
 	if(isset($_POST['submit']))
     {
-        $_SESSION['username'] = $_POST['username'];
-        header("Location: admin.php");
+		$UserQuery = "select UserName from users";
+		$Users = mysqli_query($conn, $UserQuery);
+		while($User = mysqli_fetch_array($Users, MYSQLI_ASSOC))
+		{
+			if($User['UserName'] == $_POST['username'])
+			{
+				$PassWordQuery = "select PassWord from users where UserName = '".$_POST['username']."'; ";
+				$UserPass = mysqli_fetch_array(mysqli_query($conn, $PassWordQuery), MYSQLI_ASSOC);
+				
+				if($UserPass['PassWord'] == $_POST['password'])
+				{
+					session_start();
+					$_SESSION['username'] = $_POST['username'];
+					header("Location: admin.php");
+				}
+				else
+				{
+					header("Location: login.php");
+				}
+			}
+		}
     }
 ?>
 

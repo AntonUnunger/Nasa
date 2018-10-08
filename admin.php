@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	if(!isset($_COOKIE["PHPSESSID"]))
 	{
 		header("Location: login.php");
@@ -15,7 +16,7 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
-
+	echo $_SESSION['username'];
 	$errors = array();
 	if (isset($_POST['submit'])) {
         $title = mysqli_real_escape_string($conn, $_POST['title']);
@@ -54,8 +55,7 @@
 			if (empty($errors)) {
 				$filepath = $dir.$name;
 				move_uploaded_file($file_tmp, $filepath);
-				
-				$sql = "INSERT INTO article (Title, Content, Filepath, Category, FileExt) VALUES ('$title', '$content', '$filepath', '$categories', '$real_file_ext')";
+				$sql = "INSERT INTO article (Title, Content, Filepath, Category, FileExt, Author) VALUES ('$title', '$content', '$filepath', '$categories', '$real_file_ext', '".$_SESSION['username']."')";
 				$result = mysqli_query($conn, $sql);
 			}
 		}
