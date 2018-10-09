@@ -4,7 +4,7 @@
 	{
 		header("Location: login.php");
 	}
-	include 'connect.php';
+	include 'includes/connect.php';
 	
 	echo $_SESSION['username'];
 	$errors = array();

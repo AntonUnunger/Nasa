@@ -1,5 +1,5 @@
 <?php 
-	include 'connect.php';   
+	include 'includes/connect.php';   
 ?>
 
 
@@ -54,7 +54,7 @@
 							$file = '';
 							if($slide['FileExt'] == "mp4"  || $slide['FileExt'] == "mov" || $slide['FileExt'] == "wav")
 							{
-								$file = "<a href='article.php?id=".$slide['Filepath']."'><video class='slidervid' autoplay>
+								$file = "<a href='article.php?id=".$slide['Filepath']."'><video class='slidervid' muted loop>
 											<source src='".$slide['Filepath']."' type='video/".$slide['FileExt']."'>
 										</video></a>";
 							}
@@ -155,7 +155,7 @@
 					</div>
 				</div>
 				<div class="Card">
-					<video id="WaterTest" autoplay controls>
+					<video id="WaterTest" controls>
 						<source src="./img/WaterTest.mp4" type="video/mp4">
 					</video>
 				</div>	

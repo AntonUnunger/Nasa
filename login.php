@@ -3,13 +3,14 @@
 	{
 		header("Location: admin.php");
 	}
-	
-	include 'connect.php';
+
+	include './includes/connect.php';
 
 	if(isset($_POST['submit']))
     {
 		$UserQuery = "select UserName from users";
 		$Users = mysqli_query($conn, $UserQuery);
+		
 		while($User = mysqli_fetch_array($Users, MYSQLI_ASSOC))
 		{
 			if($User['UserName'] == $_POST['username'])
