@@ -6,7 +6,6 @@
 	}
 	include 'includes/connect.php';
 	
-	echo $_SESSION['username'];
 	$errors = array();
 	if (isset($_POST['submit'])) {
         $title = mysqli_real_escape_string($conn, $_POST['title']);
@@ -61,11 +60,15 @@
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/admin.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
 	</head>
 	<body>
 		<div id="main">
 			<div id="header">
-				<a href="index.php" id="logo" ></a>
+			    <div id="logo-container">
+			        <a href="index.php" id="logo" ></a>
+			    </div>
+				
 			</div>
 			<div id="Content">
 				<div id="CreateSlider">

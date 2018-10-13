@@ -2,6 +2,7 @@
 
 body
 {
+    margin:0;
 	background:black;
 	font-family: "Titillium Web", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 }
@@ -11,7 +12,7 @@ li
 }
 #main
 {
-	width: 70%;
+	width: 1366px;
 	margin: auto;
 	position:relative;
 }
@@ -21,22 +22,26 @@ li
 	display: grid;
 	grid-template-columns: 2fr 10fr 2fr;
 	grid-template-rows:2;
-	width:inherit;
+	width:100%;
 	background: url(../img/stars.jpg);
-	position:fixed;
+	position:sticky;
 	top:0;
 	height:115px;
 	z-index: 1;
 }
-
+#logo-container
+{
+    grid-row: 1 / span 2;
+    padding:18px;
+}
 #logo
 {
+    height:100%;
+    width:100%;
 	background:url(../img/nasa-logo.png) no-repeat center;
-	background-size: contain ;
-	float:left;
-	width:100%;
-	grid-row: 1 / span 2;
-	margin:10px auto 10px auto;	
+	background-size:contain;
+	display:inline-block;
+
 }
 
 #top-menu, #lower-menu
@@ -89,7 +94,7 @@ li
 	height:40px;
 	margin: 15px 0 0 10px;
 }
-#search input[type=text]
+#boxListener
 {
 	width:80%;
 	height:100%;
@@ -97,6 +102,8 @@ li
 	padding: 0 30px 0 5px;
 	border:none;
 	background: #282727;
+	color:white;
+	
 }
 #mybutton
 {
@@ -111,10 +118,46 @@ li
 	color:lightgray;
 	position:absolute;
 }
+/*----------------------------------------------search test------------------------------------------------------*/
+#suggestions
+{
+    position:absolute;
+    background-color:rgba(77, 77, 77, 0.85);
+	border:1px solid grey;
+	border-radius:4px;
+	display:none;
+	width:300px;
+	right:-5px;
+	margin-top:5px;
+	color:white;
+	padding:10px;
+}
+
+#suggestions a
+{
+    display:block;
+    width:98%;
+    padding-bottom:5px;
+    font-size:16px;
+    border-bottom:1px solid grey;
+    color:white;
+    text-decoration:none;
+}
+
+/*----------------------------------------------search test------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
 /*----------------------------------------------CONTENT------------------------------------------------------*/
 #Main-Content
 {
-	margin-top: 125px;
+	margin-top: 10px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	
@@ -320,7 +363,7 @@ li
 }
 .slidervid
 {
-	width:100%;
+	width:1366px;
 	height:315px;
 	object-fit: fill;
 }
@@ -328,6 +371,73 @@ li
 /*----------------------------------------------4 slider------------------------------------------------------*/
 .SlideShow
 {
+    width:1366px;
 	display:none;
-	max-height:315px;
+	height:315px;
 }
+
+
+/*----------------------------------------------MOBILE???------------------------------------------------------*/
+@media only screen and (max-width: 1200px){
+    #main
+    {
+        width:100%;
+    }
+    
+    #Main-Content
+    {
+    	grid-template-columns: 1fr 1fr;
+    }
+    #Main-Content img
+    {
+	    height: 360px;
+    }
+    #relative-box,#WaterTest,#text-card,#Card-text
+    {
+        height:360px;
+    }
+    #Slider4
+    {
+        grid-column: span 2;
+    }
+    .SlideShow
+    {
+        width:100%;
+        height:360px;
+    }
+    .slidervid
+    {
+        width:100%;
+        height:360px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

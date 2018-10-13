@@ -11,13 +11,17 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/content.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
 		<script type="text/javascript" src="./js/slider.js"></script>
+		<script src="js/jq.js"></script>
 	</head>
 
 	<body>
 		<div id="main">
 			<div id="header">
-				<a href="index.php" id="logo" ></a>
+			    <div id="logo-container">
+			        <a href="index.php" id="logo" ></a>
+			    </div>
 				<ul id="top-menu">
 					<li	class="first">Missions</li>
 					<li class="horizontal">Galleries</li>
@@ -28,7 +32,8 @@
 					<li class="horizontal">NASA Audiences</li>
 				</ul>
 				<form id="search">
-					<input type="text" placeholder="Search">
+					<input id="boxListener" type="text" name="boxListener" placeholder="Search" autocomplete="off">
+					<div id="suggestions"></div>
 					<button id="mybutton"><i class="fa fa-search"></i></button>
 				</form>
 				<ul id="lower-menu">
@@ -42,6 +47,7 @@
 					<li class="lower-item">History</li>
 					<li class="lower-item">Benefits to You</li>
 				</ul>
+				<script src="./js/searchListener.js"></script>
             </div>
             <div id="Main-Content">
                 <?php
